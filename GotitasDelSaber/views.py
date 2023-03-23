@@ -1,5 +1,22 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.template import loader
 
 def index(request):
-    return HttpResponse('Bienvenido al centro, GOTITAS DEL SABER')
+    return render('Gotitas del saber')
+def a(request):
+    a = True
+    context = {'a':a}
+    return render(request, 'users.html', context)
+
+def b(request):
+    a = False
+    context = {'a':a}
+    return render(request, 'users.html', context)
+
+def proff(request):
+    profesor = {'name': 'Raul', 'surname' : 'Rufo', 'age':'19'}
+    return render(request, 'proff.html', {'name': profesor['name'], 'surname':profesor['surname'], 'age':profesor['age']})
+
+def students(request):
+    students = {'name': 'Reymon', 'surname': 'Gonzalez', 'age':'19'}
+    return render(request, 'students.html', {'students': students})
