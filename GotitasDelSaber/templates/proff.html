@@ -1,5 +1,4 @@
-{% extends 'index.html' %}
-{% block content%}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,9 +8,9 @@
     <title>Gotitas Del S4ber</title>
   </head>
   <body>
-    {% include "head/header.html" %}
-    <h1>Gotitas Del S4ber</h1>
-    <p>Centro estudiantil</p>
+    {% extends 'index.html' %}
+    {% block content%}
+    {% comment %} {% include "head/header.html" %} {% endcomment %}
     <h2>Hi teacher!<h2>
     <div>
       <div>

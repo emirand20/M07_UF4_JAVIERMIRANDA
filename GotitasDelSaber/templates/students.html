@@ -1,5 +1,3 @@
-{% extends 'index.html' %}
-{% block content%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,21 +7,24 @@
     <title>Gotitas Del S4ber</title>
   </head>
   <body>
-    {% include "head/header.html" %}
-    <h1>Gotitas Del S4ber</h1>
-    <p>Centro estudiantil</p>
-    <h2>Hi Student!</h2>
-    <div>
+    {% extends 'index.html' %}
+    {% block content %}
+      {% comment %} {% include 'head/header.html' %}
+      <h1>Gotitas Del S4ber</h1>
+      <p>Centro estudiantil</p>
+      {% endcomment %}
+      <h2>Hi Student!</h2>
       <div>
-        <label><b>Name: </b></label> {{ alumn.name }}
+        <div>
+          <label><b>Name:</b></label> {{ alumn.name }}
+        </div>
+        <div>
+          <label><b>Surmane:</b></label> {{ alumn.surmane }}
+        </div>
+        <div>
+          <label><b>Age:</b></label> {{ alumn.age }}
+        </div>
       </div>
-      <div>
-        <label><b>Surmane: </b></label> {{ alumn.surmane }}
-      </div>
-      <div>
-        <label><b>Age: </b></label> {{ alumn.age }}
-      </div>
-    </div>
+    {% endblock %}
   </body>
 </html>
-{% endblock %}

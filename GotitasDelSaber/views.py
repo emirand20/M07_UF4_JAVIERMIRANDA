@@ -1,10 +1,10 @@
 from django.template import Context, loader
 from django.shortcuts import render
 
-def index(request):
+'''def index(request):
     return render('Gotitas del saber')
 
-'''def a(request):
+def a(request):
     a = True
     context = {'a':a}
     return render(request, 'users.html', context)
