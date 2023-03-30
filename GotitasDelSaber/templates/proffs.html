@@ -11,21 +11,23 @@
 <body>
   {% extends 'index.html' %}
   {% block content%}
+  {% comment %} {% include "head/header.html" %} {% endcomment %}
   <h2>Hi teacher!<h2>
-      <h3>Teachers: {{ teacher_Obj.id }}</h3>
+      {% for teacher in tcs%}
+      <h3>Teachers: <a href="{% url 'teacher' teacher.id}"></a> {{ teacher.id }}</h3>
       <div>
         <div>
-          <label><b>Name: </b></label>  {{ teacher_Obj.name }}
+          <label><b>Name: </b></label>  {{ teacher.name }}
         </div>
         <div>
-          <label><b>Surmane: </b></label> {{ teacher_Obj.surname }}
+          <label><b>Surmane: </b></label> {{ teacher.surname }}
         </div>
         <div>
-          <label><b>Age: </b></label> {{ teacher_Obj.age }}
+          <label><b>Age: </b></label> {{ teacher.age }}
         </div>
       </div>
       <br/>
-      <a href="{% url 'proffs' %}">Go Back</a>
+      {% endfor %}
 </body>
 
 </html>

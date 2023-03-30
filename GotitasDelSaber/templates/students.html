@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gotitas Del S4ber</title>
-  </head>
-  <body>
-    {% extends 'index.html' %}
-    {% block content %}
-      {% comment %} {% include 'head/header.html' %}
-      <h1>Gotitas Del S4ber</h1>
-      <p>Centro estudiantil</p>
-      {% endcomment %}
-      <h2>Hi Student!</h2>
-      <div>
-        <div>
-          <label><b>Name:</b></label> {{ alumn.name }}
-        </div>
-        <div>
-          <label><b>Surmane:</b></label> {{ alumn.surmane }}
-        </div>
-        <div>
-          <label><b>Age:</b></label> {{ alumn.age }}
-        </div>
-      </div>
-    {% endblock %}
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gotitas Del S4ber</title>
+</head>
+
+<body>
+  {% extends 'index.html' %}
+  {% block content %}
+  {% for student in std %}
+  <h3>Student: {{ student.id}}</h3>
+  <div>
+    <div>
+      <label><b>Name:</b></label> {{ student.name }}
+    </div>
+    <div>
+      <label><b>Surmane: </b></label> {{ student.surname }}
+    </div>
+    <div>
+      <label><b>Age:</b></label> {{ student.age }}
+    </div>
+    <div>
+      <label><b>Birthplace:</b></label> {{ student.birthplace }}
+    </div>
+    <div>
+      <label><b>Status:</b></label> {{ student.status }}
+    </div>
+    <div>
+      <label><b>Genero:</b></label> {{ student.gendre }}
+    </div>
+    <div>
+      <label><b>Bio:</b></label> {{ student.bio }}
+    </div>
+  </div>
+  {% endfor %}
+</body>
+
 </html>
+{% endblock %}
