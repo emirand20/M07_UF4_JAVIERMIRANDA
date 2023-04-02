@@ -12,16 +12,16 @@
   {% extends 'index.html' %}
   {% block content%}
   <h2>Hi teacher!<h2>
-      <h3>Teachers: {{ teacher_Obj.id }}</h3>
+      <h3>Teacher: {{ tcs.id }}</h3>
       <div>
         <div>
-          <label><b>Name: </b></label>  {{ teacher_Obj.name }}
+          <label><b>Name: </b></label>  {{ tcs.name }}
         </div>
         <div>
-          <label><b>Surmane: </b></label> {{ teacher_Obj.surname }}
+          <label><b>Surmane: </b></label> {{ tcs.surname }}
         </div>
         <div>
-          <label><b>Age: </b></label> {{ teacher_Obj.age }}
+          <label><b>Age: </b></label> {{ tcs.age }}
         </div>
       </div>
       <br/>
