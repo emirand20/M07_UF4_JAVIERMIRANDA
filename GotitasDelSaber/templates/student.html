@@ -11,28 +11,25 @@
 <body>
     {% extends 'index.html' %}
     {% block content %}
-    <h3>Student: {{ student.id}}</h3>
+    <h3>Student: {{ std.id}}</h3>
     <div>
         <div>
-            <label><b>Name:</b></label> {{ student.name }}
+            <label><b>Name:</b></label> {{ std.name }}
         </div>
         <div>
-            <label><b>Surmane: </b></label> {{ student.surname }}
+            <label><b>Age:</b></label> {{ std.age }}
         </div>
         <div>
-            <label><b>Age:</b></label> {{ student.age }}
+            <label><b>Birthplace:</b></label> {{ std.birthplace }}
         </div>
         <div>
-            <label><b>Birthplace:</b></label> {{ student.birthplace }}
+            <label><b>Status:</b></label> {{ std.status }}
         </div>
         <div>
-            <label><b>Status:</b></label> {{ student.status }}
+            <label><b>Genero:</b></label> {{ std.gendre }}
         </div>
         <div>
-            <label><b>Genero:</b></label> {{ student.gendre }}
-        </div>
-        <div>
-            <label><b>Bio:</b></label> {{ student.bio }}
+            <label><b>Bio:</b></label> {{ std.bio }}
         </div>
     </div>
     <a href="{% url 'students' %}">Go Back</a>
