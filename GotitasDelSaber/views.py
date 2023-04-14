@@ -237,4 +237,4 @@ def students(request):
 def users(request, pk):
     persons = ClaseA.object.get(id=pk)
     context = {'persons':persons}
-    return 
+    return  render(request, )
