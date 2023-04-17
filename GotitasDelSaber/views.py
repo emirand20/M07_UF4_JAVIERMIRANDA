@@ -1,5 +1,6 @@
 from django.template import Context, loader
 from django.shortcuts import render
+from django.http import HttpResponse
 
 teachers = [
     {
@@ -232,3 +233,8 @@ def student(request, st):
 def students(request):
     context = {'std': alumns}
     return render(request, 'students.html', context)
+
+def users(request, pk):
+    persons = ClaseA.object.get(id=pk)
+    context = {'persons':persons}
+    return  render(request, )
