@@ -78,12 +78,12 @@ WSGI_APPLICATION = 'JaumeBalmes_JavierMiranda.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.gotitasDelSaber',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db.gotitasdelsaber',
+        'USER': 'user_phpmyadmin',
+        'PASSWORD': 'passwrd_phpmyadmin',
+        'HOST': 'localhost',
+        'PORT': '3307',
     }
 }
 

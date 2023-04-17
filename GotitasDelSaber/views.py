@@ -1,4 +1,5 @@
 from django.template import Context, loader
+from .models import Teacher, Student
 from django.shortcuts import render
 
 teachers = [
@@ -14,7 +15,7 @@ teachers = [
         'surname': 'Garcia',
         'age': 23
     },
-     {
+    {
         'id': '3',
         'name': 'Garcia',
         'surname': 'Marquez',
@@ -205,30 +206,32 @@ alumns = [
     }
 ]
 
-    
+
 def proff(request, tc):
-    teachers_Obj = None
-    for i in teachers:
-        if i['id'] == tc:
-            teachers_Obj = i
-    context = {'tcs': teachers_Obj}
+    try:
+        teacher_obj = Teacher.objects.get(id=tc)
+    except Teacher.DoesNotExist:
+        teacher_obj = None
+    context = {'tcs': teacher_obj}
     return render(request, 'proff.html', context)
 
 
 def proffs(request):
+    teachers = Teacher.objects.all()
     context = {'tcs': teachers}
     return render(request, 'proffs.html', context)
 
 
 def student(request, st):
-    alumn_Obj = None
-    for i in alumns:
-        if i['id'] == st:
-            alumn_Obj = i
+    try:
+        alumn_Obj = Student.objects.get(id=st)
+    except Student.DoesNotExist:
+        alumn_Obj = None
     context = {'std': alumn_Obj}
     return render(request, 'student.html', context)
 
 
 def students(request):
+    alumns = Student.objects.all()
     context = {'std': alumns}
     return render(request, 'students.html', context)
